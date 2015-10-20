@@ -2,7 +2,7 @@ import * as types from '../constants/ActionTypes';
 
 const initialState = {
   tweets: [],
-  termfrequencies: {}
+  tfsArraySorted: []
 };
 
 export default function tweetslist(state = initialState, action) {
