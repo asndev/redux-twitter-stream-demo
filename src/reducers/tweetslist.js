@@ -2,8 +2,10 @@ import * as types from '../constants/ActionTypes';
 
 const initialState = {
   tweets: [],
-  tfsArraySorted: []
+  termFrequencies: {}
 };
+
+const MIN_WORD_LENGTH = 3;
 
 export default function tweetslist(state = initialState, action) {
 
@@ -19,30 +21,23 @@ export default function tweetslist(state = initialState, action) {
       return copy;
     });
 
-    let newTFs = state.termfrequencies;
-    let newText = newTweet.text;
+    let words = newTweet.text
+      //.replace(/[\.,-\/#!$%\^&\*;:{}=\-_`~()]/g, '')
+      .split(' ')
+      .filter(w => {
+        return w.length > MIN_WORD_LENGTH;
+      });
 
-    newText.split(' ').forEach(word => {
-      if (newTFs[word]) {
-        newTFs[word]++;
-      } else {
-        newTFs[word] = 1;
-      }
-    });
-
-    let sortedKeys = Object.keys(newTFs).sort(function(a, b) {
-      return newTFs[b] - newTFs[a];
-    });
-
-    let tfsArraySorted = [];
-    sortedKeys.splice(0, 15).forEach(sk => {
-      tfsArraySorted.push([sk, newTFs[sk]]);
+    let newTermFrequencies = Object.assign({}, state.termFrequencies);
+    words.forEach(word => {
+      newTermFrequencies[word] = newTermFrequencies[word] || 0;
+      newTermFrequencies[word]++;
     });
 
     return {
       ...state,
       tweets: [newTweet, ...oldTweets].splice(0, 5),
-      tfsArraySorted
+      termFrequencies: newTermFrequencies
     };
 
   default:

@@ -5,7 +5,7 @@ import io from 'socket.io-client';
 import mapValues from 'lodash/object/mapValues';
 
 import * as TweetActions from '../actions/TweetActions';
-import { EntityList } from '../components';
+import { EntityList, TermFrequencyList } from '../components';
 
 const socket = io();
 
@@ -45,15 +45,9 @@ export default class TweetsApp extends Component {
             </div>
             <div className='clox-xs-6 col-md-4'>
               <h2>Term Frequencies</h2>
-              <p>
-                {
-                  tweetslist.tfsArraySorted.map(function(tfArray) {
-                    return <span>
-                      {tfArray[0]}: {tfArray[1]}<br/>
-                    </span>;
-                  })
-                }
-              </p>
+              <TermFrequencyList
+                termFrequencies={tweetslist.termFrequencies}
+                />
             </div>
         </div>
       </div>
