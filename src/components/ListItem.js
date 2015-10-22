@@ -19,16 +19,14 @@ export default class ListItem extends Component {
   }
 
   render() {
-    return (
-      <a href='#'
+    return <a href='#'
          style={style.item} className={'list-group-item ' +
            (this.props.tweet.isNew ? styles.newItem : '')}>
         <h4 className='list-group-item-heading'>@{this.props.tweet.user.screen_name}</h4>
         <blockquote>
             <p className='list-group-item-text'>{this.props.tweet.text}</p>
         </blockquote>
-      </a>
-    );
+      </a>;
   }
 
 }

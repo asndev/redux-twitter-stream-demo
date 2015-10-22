@@ -9,18 +9,16 @@ export default class EntityList extends Component {
   }
 
   render() {
-    return (
-      <div className='list-group'>
+    return <div className='list-group'>
         {
-          mapValues(this.props.tweets, (tweet) => {
-            return (<ListItem
-              key={tweet.id}
+          this.props.tweets.map(tweet => {
+            return <ListItem
+              key={tweet.id_str}
               tweet={tweet}
-              />);
+            />;
           })
         }
-      </div>
-    );
+    </div>;
   }
 
 }
