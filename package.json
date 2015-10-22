@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hknd/react-simple-starter.git"
+    "url": "https://github.com/hknd/redux-twitter-stream-demo.git"
   },
   "author": "anton stepan",
   "bugs": {
-    "url": "https://github.com/hknd/react-simple-starter/issues"
+    "url": "https://github.com/hknd/redux-twitter-stream-demo/issues"
   },
-  "homepage": "https://github.com/hknd/react-simple-starter",
+  "homepage": "http://antonstepan.de",
   "devDependencies": {
     "babel-core": "^5.8.3",
     "babel-loader": "^5.3.2",

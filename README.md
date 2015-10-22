@@ -1,4 +1,7 @@
-# Simple Starter for React+Redux Projects
+# Simple React+Redux+Socket.io Twitter Stream
+
+Simple Demo Project for ^ to live stream twitter data and compute the term frequencies
+of the used words.
 
 ```
 - npm install
@@ -7,6 +10,7 @@
 ```
 
 Example Twitter Config:
+get your api keys from https://apps.twitter.com/
 ```
 module.exports = {
   consumer_key: '421241241241',
@@ -22,6 +26,7 @@ Using
 - Redux Dev Tools
 - React Transformer
 - Webpack
+- Socketio
 - Babel
 - Express
 - Inline Styles

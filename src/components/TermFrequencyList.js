@@ -8,18 +8,20 @@ export default class EntityList extends Component {
   }
 
   _sortTermFrequencies(termFrequencies) {
-    return Object.keys(termFrequencies).map(key => {
-      return [key, termFrequencies[key]];
-    }).sort((a, b) => {
-      return b[1] - a[1];
-    })
-    .slice(0, 15)
-    .map(arr => {
-      return <li className='list-group-item'>
-        <span className='badge'>{arr[1]}</span>
-        {arr[0]}
-      </li>;
-    });
+    return Object.keys(termFrequencies)
+      .map(key => {
+        return [key, termFrequencies[key]];
+      })
+      .sort((a, b) => {
+        return b[1] - a[1];
+      })
+      .slice(0, 15)
+      .map(arr => {
+        return <li key={arr[0]} className='list-group-item'>
+          <span className='badge'>{arr[1]}</span>
+          {arr[0]}
+        </li>;
+      });
   }
 
   render() {

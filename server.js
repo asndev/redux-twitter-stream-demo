@@ -32,6 +32,7 @@ twitterClient.stream('statuses/filter', {
   track: 'javascript'
 }, function(stream) {
   stream.on('data', function(tweet) {
+    // We emit socket events, st the client can listen to them
     io.emit('tweet', tweet);
   });
 
