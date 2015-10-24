@@ -3,6 +3,9 @@
 Simple Demo Project for ^ to live stream twitter data and compute the term frequencies
 of the used words.
 
+![Example Gif](/github-redux-d3-twitter-stream.gif?raw=true "")
+
+
 ```
 - npm install
 - create twitter.config.js
@@ -25,6 +28,7 @@ Using
 - Redux
 - Redux Dev Tools
 - React Transformer
+- d3-react
 - Webpack
 - Socketio
 - Babel

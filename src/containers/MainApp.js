@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import io from 'socket.io-client';
 import mapValues from 'lodash/object/mapValues';
+import { Treemap } from 'react-d3';
 
 import * as TweetActions from '../actions/TweetActions';
 import { EntityList, TermFrequencyList } from '../components';
@@ -31,23 +32,40 @@ export default class TweetsApp extends Component {
     });
   }
 
+  mapTermFrequencies(termFreqObj) {
+    return Object.keys(termFreqObj)
+      .map(key => {
+        return {label: key, value: termFreqObj[key]};
+      })
+      .sort((a, b) => {
+        return b.value - a.value;
+      })
+      .slice(0, 15);
+  }
+
   render() {
     const {tweetslist} = this.props;
 
     return (
       <div className='container-fluid'>
         <div className='row'>
-            <div className='col-xs-12 col-md-8'>
+            <div className='col-xs-6 col-md-4'>
               <h2>Tweets for topic: #javascript</h2>
               <EntityList
                 tweets={tweetslist.tweets}
                 />
             </div>
-            <div className='clox-xs-6 col-md-4'>
+            <div className='clox-xs-12 col-md-8'>
               <h2>Term Frequencies</h2>
-              <TermFrequencyList
-                termFrequencies={tweetslist.termFrequencies}
-                />
+                  <Treemap
+                    data={this.mapTermFrequencies(tweetslist.termFrequencies)}
+                    width={800}
+                    height={600}
+                    textColor='#484848'
+                    fontSize='14px'
+                    title=''
+                    hoverAnimation={false}
+                  />
             </div>
         </div>
       </div>
