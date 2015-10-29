@@ -38,7 +38,7 @@ export default class TweetsApp extends Component {
       <div className='container-fluid'>
         <div className='row'>
             <div className='col-xs-12 col-md-8'>
-              <h2>Tweets for topic: #javascript</h2>
+              <h2>Tweets for topic: #5YearsFromNow</h2>
               <EntityList
                 tweets={tweetslist.tweets}
                 />

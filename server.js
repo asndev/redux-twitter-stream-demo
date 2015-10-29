@@ -29,7 +29,7 @@ var server = http.createServer(app).listen(3000, function() {
 var io = require('socket.io').listen(server);
 
 twitterClient.stream('statuses/filter', {
-  track: 'javascript'
+  track: '5YearsFromNow'
 }, function(stream) {
   stream.on('data', function(tweet) {
     // We emit socket events, st the client can listen to them
