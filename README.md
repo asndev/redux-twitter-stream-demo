@@ -40,6 +40,3 @@ TODO:
 - npm build command for production build
 - unit tests
 - integration tests
-
-
-_Ported from asn gitlab_
