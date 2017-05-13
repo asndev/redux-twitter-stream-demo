@@ -1,4 +1,4 @@
-# Simple React+Redux+Socket.io Twitter Stream
+# [Deprecated] Simple React+Redux+Socket.io Twitter Stream
 
 Simple Demo Project for ^ to live stream twitter data and compute the term frequencies
 of the used words.
