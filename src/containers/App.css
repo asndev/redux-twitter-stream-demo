@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  color: white;
+  background-color: #222;
+  height: 48vh;
+  padding: 20px;
+  overflow: scroll;
+}
+
+.App-intro {
+  height: 48vh;
+  font-size: large;
+  overflow: scroll;
+}
+
+.badge {
+  margin-left: 20px;
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: black;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: white;
+  border-radius: 10px;
+}
+
+ul {
+  list-style: none;
+}
