@@ -3,7 +3,6 @@
 Simple Demo Project for ^ to live stream twitter data and compute the term frequencies
 of the used words.
 
-TODO: example gif
 ![Example Gif](/tweets.gif?raw=true "")
 
 ```
